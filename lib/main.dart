@@ -16,9 +16,19 @@ void main() {
               Text(
                 'Mr. Orange',
                 style: TextStyle(
-                  fontSize: 15.0,
+                  fontFamily: 'Girassol',
+                  fontSize: 20.0,
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
+                ),
+              ),
+              Text(
+                'Source of Vitamin C',
+                style: TextStyle(
+                  fontFamily: 'DancingScript',
+                  fontSize: 15.0,
+                  letterSpacing: 2.0,
+                  color: Colors.white,
                 ),
               ),
             ],
