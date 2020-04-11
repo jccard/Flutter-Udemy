@@ -6,46 +6,20 @@ void main() {
       home: Scaffold(
         backgroundColor: Colors.teal,
         body: SafeArea(
-          child: Row(
+          child: Column(
             children: <Widget>[
-              Column(
-                children: <Widget>[
-                  Expanded(
-                    child: Container(
-                      width: 100.0,
-                      color: Colors.red,
-                      child: Text('red column'),
-                    ),
-                  ),
-                ],
+              CircleAvatar(
+                radius: 50.0,
+                backgroundColor: Colors.teal, // otherwise gives blue background
+                backgroundImage: AssetImage('assets/images/orange_icon.png'),
               ),
-              Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Container(
-                      height: 100.0,
-                      width: 100.0,
-                      color: Colors.yellow,
-                    ),
-                    Container(
-                      height: 100.0,
-                      width: 100.0,
-                      color: Colors.green,
-                    ),
-                  ],
+              Text(
+                'Mr. Orange',
+                style: TextStyle(
+                  fontSize: 15.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
                 ),
-              ),
-              Column(
-                children: <Widget>[
-                  Expanded(
-                    child: Container(
-                      width: 100.0,
-                      color: Colors.blue,
-                      child: Text('blue column'),
-                    ),
-                  ),
-                ],
               ),
             ],
           ),
