@@ -7,6 +7,7 @@ void main() {
         backgroundColor: Colors.teal,
         body: SafeArea(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               CircleAvatar(
                 radius: 50.0,
@@ -31,58 +32,44 @@ void main() {
                   color: Colors.white,
                 ),
               ),
-              Divider(
-                indent: 50.0,
-                endIndent: 50.0,
+              SizedBox(
+                height: 20.0,
+                width: 150.0,
+                child: Divider(
+                  color: Colors.white,
+                ),
               ),
-              Container(
-                color: Colors.white,
+              Card(
+                // color: Colors.white, // Card has white color by default
                 margin: EdgeInsets.symmetric(
                   vertical: 10.0,
                   horizontal: 25.0,
                 ),
-                padding: EdgeInsets.all(
-                  10.0,
-                ),
-                child: Row(
-                  children: <Widget>[
-                    Icon(
-                      Icons.add_shopping_cart,
-                      size: 30.0,
-                      color: Colors.teal[200],
-                    ),
-                    SizedBox(
-                      width: 10.0,
-                    ),
-                    Text(
-                      'Put it in the cart',
-                    ),
-                  ],
+                child: ListTile(
+                  leading: Icon(
+                    Icons.note_add,
+                    size: 30.0,
+                    color: Colors.teal[200],
+                  ),
+                  title: Text(
+                    'Make a note',
+                  ),
                 ),
               ),
-              Container(
-                color: Colors.white,
+              Card(
                 margin: EdgeInsets.symmetric(
                   vertical: 10.0,
                   horizontal: 25.0,
                 ),
-                padding: EdgeInsets.all(
-                  10.0,
-                ),
-                child: Row(
-                  children: <Widget>[
-                    Icon(
-                      Icons.note_add,
-                      size: 30.0,
-                      color: Colors.teal[200],
-                    ),
-                    SizedBox(
-                      width: 10.0,
-                    ),
-                    Text(
-                      'Write it down',
-                    ),
-                  ],
+                child: ListTile(
+                  leading: Icon(
+                    Icons.add_a_photo,
+                    size: 30.0,
+                    color: Colors.teal[200],
+                  ),
+                  title: Text(
+                    'Take a picture',
+                  ),
                 ),
               ),
             ],
