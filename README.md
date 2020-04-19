@@ -1,16 +1,6 @@
-# i_am_rich
+# Fluttter-Udemy
 
-A new Flutter application.
+This repo is for the mini-projects that I've been setting up as part of the Udemy course:
+* [The Complete 2020 Flutter Development Bootcamp with Dart|https://www.udemy.com/course/flutter-bootcamp-with-dart/]
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+I am also fairly inexperienced with GitHub in general. I wanted to have each project in a folder, and merge each folder into the master branch to minimize the number of branches. However, apparently I approached that incorrectly. Now I have separate branches for each mini-project. Not a big deal, just not what I was going for.
