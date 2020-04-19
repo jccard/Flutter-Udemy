@@ -10,7 +10,7 @@ class XylophoneApp extends StatelessWidget {
   }
 
   Expanded buildKey({Color keyColor, String keyFilename}) {
-    // enclose in braces to use Named Parameters!
+    // enclose parameters in braces to use Named Parameters!
     return Expanded(
       child: FlatButton(
         color: keyColor,
