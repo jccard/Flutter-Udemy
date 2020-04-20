@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() => runApp(Quizzler());
 
@@ -19,12 +20,45 @@ class Quizzler extends StatelessWidget {
   }
 }
 
+////////////////////
+// Quiz Page
 class QuizPage extends StatefulWidget {
   @override
   _QuizPageState createState() => _QuizPageState();
 }
 
 class _QuizPageState extends State<QuizPage> {
+
+  List<Icon> scoreKeeper = [];
+  List<String> questions = [
+    'You can lead a cow down stairs but not up stairs.',
+    'Approximately one quarter of human bones are in the feet.',
+    'A slug\'s blood is green.',
+  ];
+  List<bool> answers = [
+    false,
+    true,
+    true,
+  ];
+  int questionNumber = 0;
+
+  void checkAnswer(bool answer) {
+    if(answer == answers[questionNumber]) {
+      scoreKeeper.add(Icon(Icons.check, color: Colors.green,));
+    } else {
+      scoreKeeper.add(Icon(Icons.cancel, color: Colors.red,));
+    }
+  }
+
+  void showNextQuestion() {
+    //questionNumber = Random().nextInt(questions.length);
+    if (questionNumber == questions.length - 1) {
+      questionNumber = 0;
+    } else {
+      questionNumber++;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -37,7 +71,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                'This is where the question text will go.',
+                questions[questionNumber],
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -46,7 +80,7 @@ class _QuizPageState extends State<QuizPage> {
               ),
             ),
           ),
-        ),
+        ), // Question text
         Expanded(
           child: Padding(
             padding: EdgeInsets.all(15.0),
@@ -62,10 +96,14 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked true.
+                setState(() {
+                  checkAnswer(true);
+                  showNextQuestion();
+                });
               },
             ),
           ),
-        ),
+        ), // True button
         Expanded(
           child: Padding(
             padding: EdgeInsets.all(15.0),
@@ -80,15 +118,23 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked false.
+                setState(() {
+                  checkAnswer(false);
+                  showNextQuestion();
+                });
               },
             ),
           ),
-        ),
-        //TODO: Add a Row here as your score keeper
+        ), // False button
+        Row(
+          children: scoreKeeper,
+        ), // Scorekeeper display
       ],
     );
   }
 }
+// END Quiz Page
+////////////////////
 
 /*
 question1: 'You can lead a cow down stairs but not up stairs.', false,
