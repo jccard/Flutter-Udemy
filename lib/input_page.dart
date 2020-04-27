@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'icon_content.dart';
+import 'reusable_card.dart';
 
 const double bottomBarHeight = 50.0;
 const Color inactiveCardColor = Color(0xFF1E3B5);
@@ -22,10 +25,22 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: <Widget>[
                 Expanded(
-                  child: ReusableCard(colour: activeCardColor),
+                  child: ReusableCard(
+                    colour: activeCardColor,
+                    cardChild: IconContent(
+                      displayIcon: FontAwesomeIcons.mars,
+                      displayText: 'MALE',
+                    ),
+                  ),
                 ),
                 Expanded(
-                  child: ReusableCard(colour: activeCardColor),
+                  child: ReusableCard(
+                    colour: activeCardColor,
+                    cardChild: IconContent(
+                      displayIcon: FontAwesomeIcons.venus,
+                      displayText: 'FEMALE',
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -58,22 +73,5 @@ class _InputPageState extends State<InputPage> {
             height: bottomBarHeight,
           )
         ]));
-  }
-}
-
-class ReusableCard extends StatelessWidget {
-  // This is how I can set it up to define color for each panel.
-  ReusableCard({@required this.colour}); // property is optional by default
-  final Color colour; // makes this property immutable; once set, it can't be changed
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(10.0),
-      decoration: BoxDecoration(
-        color: colour,
-        borderRadius: BorderRadius.circular(10.0),
-      ),
-    );
   }
 }
